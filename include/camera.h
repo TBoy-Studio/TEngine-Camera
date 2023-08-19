@@ -41,7 +41,7 @@ typedef struct{
     with world_up vector {up_x, up_y, up_z}
     and yaw and pitch. 
     Other values of camera will use default values
-    Returns a new camera object
+    Stores resulting camera in result
 */
 void camera_create(float pos_x, float pos_y, float pos_z, float up_x, float up_y, float up_z, float yaw, float pitch, float aspect_ratio, Camera* result);
 
