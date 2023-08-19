@@ -43,7 +43,7 @@ typedef struct{
     Other values of camera will use default values
     Returns a new camera object
 */
-Camera camera_create(float pos_x, float pos_y, float pos_z, float up_x, float up_y, float up_z, float yaw, float pitch, float aspect_ratio);
+void camera_create(float pos_x, float pos_y, float pos_z, float up_x, float up_y, float up_z, float yaw, float pitch, float aspect_ratio, Camera* result);
 
 /*
     Gets the projection matrix for a perspective view from this camera and stores it in result

@@ -21,22 +21,29 @@ void update_camera_vectors(Camera* cam){
     glm_vec3_normalize(cam->up);
 }
 
-Camera camera_create(float pos_x, float pos_y, float pos_z, float up_x, float up_y, float up_z, float yaw, float pitch, float aspect_ratio){
-    Camera camera = {
-        .position = {pos_x, pos_y, pos_z},
-        .world_up = {up_x, up_y, up_z},
-        .front = {0.0f, 0.0f, -1.0f},
-        .movement_speed = SPEED,
-        .mouse_sensitivity = SENSITIVITY,
-        .zoom = ZOOM,
-        .yaw = yaw,
-        .pitch = pitch,
-        .aspect_ratio = aspect_ratio,
-        .near_plane_dist = NEAR_PLANE_DIST,
-        .far_plane_dist = FAR_PLANE_DIST
-    };
-    update_camera_vectors(&camera); // Make sure vectors are up to date
-    return camera;
+void camera_create(float pos_x, float pos_y, float pos_z, float up_x, float up_y, float up_z, float yaw, float pitch, float aspect_ratio, Camera* result){
+    result->position[0] = pos_x;
+    result->position[1] = pos_y;
+    result->position[2] = pos_z;
+
+    result->world_up[0] = up_x;
+    result->world_up[1] = up_y;
+    result->world_up[2] = up_z;
+
+    result->front[0] = 0.0f;
+    result->front[1] = 0.0f;
+    result->front[2] = -1.0f;
+
+    result->movement_speed = SPEED;
+    result->mouse_sensitivity = SENSITIVITY;
+    result->zoom = ZOOM;
+    result->yaw = yaw;
+    result->pitch = pitch;
+    result->aspect_ratio = aspect_ratio;
+    result->near_plane_dist = NEAR_PLANE_DIST;
+    result->far_plane_dist = FAR_PLANE_DIST;
+
+    update_camera_vectors(result); // Make sure vectors are up to date
 }
 
 void camera_get_view_matrix(Camera* cam, mat4 result){
