@@ -1,7 +1,9 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
-#include <cglm/cglm.h>
+#include <cglm/types.h>
+#include <cglm/vec3.h>
+#include <cglm/cam.h>
 
 #define NEAR_PLANE_DIST 0.1f
 #define FAR_PLANE_DIST 200.0f
