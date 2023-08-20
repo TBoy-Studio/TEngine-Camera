@@ -29,13 +29,6 @@ typedef struct{
     float far_plane_dist;
 } Camera;
 
-typedef struct{
-    vec3 top_left;
-    vec3 top_right;
-    vec3 bottom_left;
-    vec3 bottom_right;
-} CameraNearPlaneCorners;
-
 /*
     Create a camera at position {pos_x, pos_y, pos_z}
     with world_up vector {up_x, up_y, up_z}
